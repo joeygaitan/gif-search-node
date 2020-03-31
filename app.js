@@ -25,6 +25,13 @@ app.get('/:username', (req, res) => {
     // Then render the template to display the users's info
   })
 
+  app.get('/greetings/:name', (req, res) => {
+    // grab the name from the path provided
+    const name = req.params.name;
+    // render the greetings view, passing along the name
+    res.render('greetings', { name });
+  })
+
 // Start Server
 
 app.listen(3000, () => {
